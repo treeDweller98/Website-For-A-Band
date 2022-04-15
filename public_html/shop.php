@@ -3,10 +3,11 @@
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->safeLoad();
 
+    
 
     include('resources/templates/header.php');
     // PAGE TITLE
-    $title = "Home";
+    $title = "Shop";
 
     $output = str_replace('%TITLE%', $title, $output);
     echo $output;
@@ -14,7 +15,7 @@
 
 
 <!-- NAVBAR -->
-<?php require 'resources/templates/nav.php'?>
+<?php require 'resources/.php'?>
 
 <main>
     <!-- main slideshow with new music, featured merch etc.-->

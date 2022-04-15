@@ -6,7 +6,7 @@
 
     include('resources/templates/header.php');
     // PAGE TITLE
-    $title = "Home";
+    $title = "Profile";
 
     $output = str_replace('%TITLE%', $title, $output);
     echo $output;
@@ -14,7 +14,7 @@
 
 
 <!-- NAVBAR -->
-<?php require 'resources/templates/nav.php'?>
+<?php require 'resources/.php'?>
 
 <main>
     <!-- main slideshow with new music, featured merch etc.-->
