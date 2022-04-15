@@ -1,0 +1,62 @@
+Home:
+    + Latest Album (spotify links etc.) | Merch
+    + Band photos
+    + Tour date
+    -- Newsletter
+
+Contact
+    + Contact everything | Socials etc. | Newsletter
+
+Login/Reg:
+    + Plain and simple with image in the background
+
+Shop (data listing):
+    + Tickets
+    + Categories in the sidebar, filterable
+    + Cards for merch items ("Buy Now", "Add to Cart" Button)
+    + Cart Icon
+    + Cart popup
+
+Private Page:
+    + Personal info (names, address, billing, preferences)
+    + Previous purchase receipts table
+    + Apply for giveaways (typically disabled)
+
+Admin Panel:
+    + Add photos, tours, new music etc. (basically homepage stuff)
+    + Featured merch
+    + Add new merch to shop
+    + Buyer details
+    + Registered user details.
+
+
+
+Entities:
+    1. User:
+        - UID       PK
+        - Fname
+        - Lname
+        - Email
+        - Phone
+        - Address
+        - Password
+    2. Merch:
+        - MerchID      PK 
+        - Name
+        - Description
+        - Image
+        - Category
+        - Price
+        - Stock
+        - Discount
+    3. Ticket
+
+    4. Purchases:
+        - InvoiceID     - PK
+        - UID   FK
+
+    5. Slide:
+        - Slide main image
+        - btnType
+        - btnImage
+        - btnLink
