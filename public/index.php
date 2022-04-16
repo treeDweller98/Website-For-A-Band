@@ -1,39 +1,15 @@
 <?php
-    require 'vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->safeLoad();
-
-
-    include('resources/templates/header.php');
-    // PAGE TITLE
-    $title = "Home";
-
-    $output = str_replace('%TITLE%', $title, $output);
-    echo $output;
+    require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
+    require_once(LIBRARY_PATH . "/templateFunctions.php");
+   
+    // Set all variables to use in the page here 
+    $title = "Hello World";
+    
+    // Package variables for use
+    $variables = array(
+        'title' => $title
+    );
+    
+    // Render page
+    renderLayoutWithContentFile("home.php", $variables);
 ?>
-
-
-<!-- NAVBAR -->
-<?php require 'resources/templates/nav.php'?>
-
-<main>
-    <!-- main slideshow with new music, featured merch etc.-->
-    <section>
-        SLIDESHOW
-    </section>
-
-    <!-- Band photos and about us stuff -->
-    <section>
-        BAND PHOTOS
-    </section>
-
-    <!-- Tour date cards -->
-    <section>
-        TOUR DATE
-        TOUR DATE
-        TOUR DATE
-    </section>
-</main>
-
-<!-- FOOTER -->
-<?php require 'resources/templates/footer.php' ?>
