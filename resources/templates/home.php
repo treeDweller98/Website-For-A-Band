@@ -9,7 +9,7 @@
         BAND PHOTOS
         <img src="images/merch/hat-1.jpg" alt="">
 
-        <?php echo $_ENV['DATABASE_NAME']; ?>
+        <?php echo $_ENV["DB_NAME"]; ?>
     </section>
 
     <!-- Tour date cards -->
