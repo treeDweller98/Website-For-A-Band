@@ -1,31 +1,32 @@
 <?php
-    require 'vendor/autoload.php';
+    require '../vendor/autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->safeLoad();
 
 
-    include('resources/templates/header.php');
+    include('../resources/templates/header.php');
     // PAGE TITLE
     $title = "Login";
 
     $output = str_replace('%TITLE%', $title, $output);
     echo $output;
 ?>
+<?php require '../resources/templates/nav.php'?>
 
 <main>
-    <form action="-----------" method="POST" class="needs-validation" novalidate>
+    <form action="#" method="POST" class="needs-validation" novalidate>
         <h1>Log-In</h1>
 
         <div">
-            <label for="emailBox" class="form-label">Email</label>
-            <input type="email" class="form-control" id="emailBox" aria-describedby="emailHelp" name="email" placeholder="example@email.com" required>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="loginEmailBox" class="form-label">Email</label>
+            <input type="email" class="form-control" id="loginEmailBox" aria-describedby="loginEmailHelp" name="loginEmail" placeholder="example@email.com" required>
+            <div id="loginEmailHelp" class="form-text">We'll never share your email with anyone else.</div>
             <div class="invalid-feedback">Please enter a valid email address</div>
         </div>
 
         <div">
-            <label for="pwbox" class="form-label">Password</label>
-            <input type="password" class="form-control" id="pwbox" name="password" required>
+            <label for="loginPasswordBox" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPasswordBox" name="loginPassword" required>
         </div>
 
         <div class="form-check">
@@ -35,11 +36,11 @@
 
         <a href="----------">Forgot Password?</a>
 
-        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        <button type="submit" value="LogIn" class="btn btn-primary">Log In</button>
     </form>
 
 
-    <form action="-----------" method="POST" class="needs-validation" novalidate>
+    <form action="#" method="POST" class="needs-validation" novalidate>
         <h1>Sign Up</h1>
 
         <!-- NAME -->
@@ -107,36 +108,39 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="termsAndConditions" required>
             <label class="form-check-label" for="termsAndConditions">
-                Agree to <a href="---------">terms and conditions</a>
+                I agree to the <a href="---------">terms and conditions</a>
             </label>
             <div class="invalid-feedback">
                 You must agree before submitting.
             </div>
         </div>
 
-        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        <button type="submit" value="SignUp" class="btn btn-primary">Register</button>
     </form>
+
+    <script>
+        // JavaScript for disabling form submissions if there are invalid fields
+        $(document).ready(function () {
+            'use strict'
+        
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+        
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </main>
 
-<script>
-    // JavaScript for disabling form submissions if there are invalid fields
-    $(document).ready(function () {
-        'use strict'
-    
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-    
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-    
-            form.classList.add('was-validated')
-            }, false)
-        })
-    })()
-</script>
+
+<?php require '../resources/templates/footer.php' ?>
