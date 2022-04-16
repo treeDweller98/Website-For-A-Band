@@ -10,12 +10,16 @@
     <script defer src="js/bootstrap.bundle.min.js"></script>
     <script defer src="js/jquery-3.6.0.min.js"></script>
 
-    <?php 
-        foreach( $stylesheets as $stylesheet ) {
-            echo "<link rel=\"stylesheet\" href=\"css/{$stylesheet}\">";
+    <?php
+        if ( isset($stylesheets) ) {
+            foreach( $stylesheets as $stylesheet ) {
+                echo "<link rel=\"stylesheet\" href=\"css/{$stylesheet}\">";
+            }
         }
-        foreach( $scripts as $script ) {
-            echo "<script defer src=\"js/{$script}\"></script>";
+        if ( isset($scripts) ) {
+            foreach( $scripts as $script ) {
+                echo "<script defer src=\"js/{$script}\"></script>";
+            }
         }
     ?>
     <title><?php echo $title; ?></title>
