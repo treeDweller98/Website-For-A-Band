@@ -1,31 +1,10 @@
+<!-- TODO:
+    1. Have "passwords identical" validation working
+    2. Make form input sticky between reloads(?)
+    3. Add the error messages generated in signup.php
+-->
 <main>
-    <form action="#" method="POST" class="needs-validation" novalidate>
-        <h1>Log-In</h1>
-
-        <div">
-            <label for="loginEmailBox" class="form-label">Email</label>
-            <input type="email" class="form-control" id="loginEmailBox" aria-describedby="loginEmailHelp" name="loginEmail" placeholder="example@email.com" required>
-            <div id="loginEmailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            <div class="invalid-feedback">Please enter a valid email address</div>
-        </div>
-
-        <div">
-            <label for="loginPasswordBox" class="form-label">Password</label>
-            <input type="password" class="form-control" id="loginPasswordBox" name="loginPassword" required>
-        </div>
-
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="rememberMeChk">
-            <label class="form-check-label" for="rememberMeChk">Remember Me</label>
-        </div>
-
-        <a href="----------">Forgot Password?</a>
-
-        <button type="submit" value="login" name="action" class="btn btn-primary">Log In</button>
-    </form>
-
-
-    <form action="#" method="POST" class="needs-validation" novalidate>
+    <form action="signup.php" method="POST" class="needs-validation" novalidate>
         <h1>Sign Up</h1>
 
         <!-- NAME -->
@@ -45,7 +24,15 @@
             <label for="emailbox" class="form-label">Email</label>
             <input type="email" class="form-control" id="emailbox" aria-describedby="emailHelp" placeholder="example@email.com" name="email" required>
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            <div class="invalid-feedback">Please enter a valid email address</div>
+            <div class="invalid-feedback">
+                <?php
+                    if ( isset($email_err) ) {
+                        echo $email_err;
+                    } else {
+                        echo "Please enter a valid email address";
+                    }
+                ?>
+            </div>
         </div>
 
         <!-- PHONE -->
@@ -82,12 +69,19 @@
         <!-- PASSWORD -->
         <div>
             <label for="pwbox" class="form-label">Password</label>
-            <input type="password" class="form-control" aria-describedby="pwHelp" id="pwbox" name="password" required>
+            <input 
+                type="password" class="form-control" aria-describedby="pwHelp" id="pwbox" name="password" 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required
+            >
+            <div class="invalid-feedback">
+                    Please enter a valid password
+            </div>        
 
             <label for="pwbox2" class="form-label">Retype Password</label>
-            <input type="password" class="form-control" id="pwbox2" required>
-
-            <div id="pwHelp" class="form-text">Should be at least 8-characters long</div>
+            <input type="password" class="form-control" id="pwbox2" name="confirmPassword" required>
+            <div id="pwHelp" class="form-text">
+                Should be at least 8-characters long with numbers, uppercase and lowercase letters
+            </div>
         </div>
 
         <!-- NEWSLETTER -->
@@ -102,13 +96,17 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="termsAndConditions" required>
             <label class="form-check-label" for="termsAndConditions">
-                I agree to the <a href="---------">terms and conditions</a>
+                I agree to the <a href="#">terms and conditions</a>
             </label>
             <div class="invalid-feedback">
                 You must agree before submitting.
             </div>
         </div>
 
-        <button type="submit" value="signup" name="action" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary">Register</button>
+
+        <div>
+            <p> Already have an account? </p><a href="login.php">Log In</a>
+        </div>
     </form>
 </main>

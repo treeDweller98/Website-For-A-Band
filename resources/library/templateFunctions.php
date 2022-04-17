@@ -43,8 +43,8 @@
         $variables = array(
             // For the header.php
             "title" => "myPageTitle",                                       // Mandatory
-            "stylesheets" => array("djKhaled.css","anotherOne.css"),        // Optional: anything other than the bootstrap or root stuff
-            "scripts" => array("djKhaled.js","anotherOne.js"),              // Optional: e.g. form validations code etc. that a specific page might need
+            "stylesheets" => array("css/djKhaled.css","https://anotherOne.css"),       // Optional: anything other than the bootstrap or root stuff
+            "scripts" => array("js/djKhaled.js","https://anotherOne.js"),              // Optional: e.g. form validations code etc. that a specific page might need
             ..
             ..
             // For the templateContentFile.php (optional)

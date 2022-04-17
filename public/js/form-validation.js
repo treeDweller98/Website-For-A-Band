@@ -9,7 +9,7 @@ $(document).ready(function () {
     Array.prototype.slice.call(forms)
     .forEach(function (form) {
         form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
+        if (!form.checkValidity() && matchPassword()) {
             event.preventDefault()
             event.stopPropagation()
         }
@@ -18,3 +18,12 @@ $(document).ready(function () {
         }, false)
     })
 })()
+
+function matchPassword() {  
+    var pw1 = document.getElementById("password");  
+    var pw2 = document.getElementById("confirmPassword");
+    
+    if(pw1 == pw2) {
+        return true;
+    } return false;
+}

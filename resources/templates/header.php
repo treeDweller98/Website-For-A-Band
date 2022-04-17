@@ -13,12 +13,12 @@
     <?php
         if ( isset($stylesheets) ) {
             foreach( $stylesheets as $stylesheet ) {
-                echo "<link rel=\"stylesheet\" href=\"css/{$stylesheet}\">";
+                echo "<link rel=\"stylesheet\" href=\"{$stylesheet}\">";
             }
         }
         if ( isset($scripts) ) {
             foreach( $scripts as $script ) {
-                echo "<script defer src=\"js/{$script}\"></script>";
+                echo "<script defer src=\"{$script}\"></script>";
             }
         }
     ?>
