@@ -1,17 +1,16 @@
 <?php
-    require 'vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->safeLoad();
-
-
-    include('resources/templates/header.php');
-    // PAGE TITLE
-    $title = "Profile";
-
-    $output = str_replace('%TITLE%', $title, $output);
-    echo $output;
+    require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
+    require_once(LIBRARY_PATH . "/templateFunctions.php");
+    
+    // insert logic here
+    
+    // Render
+    $variables = array(
+        'title' => "Account | {$_SESSION["username"]}",
+    );
+    
+    renderLayoutWithContentFile("profile.php", $variables);
 ?>
-
 
 <!-- NAVBAR -->
 <?php require 'resources/.php'?>
