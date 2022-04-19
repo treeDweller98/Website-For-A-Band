@@ -1,0 +1,15 @@
+body{
+    color: white;
+}
+
+table >*{
+    color: var(--font-color-default);
+}
+
+.merch-table > tbody img{
+    max-width: 6rem;
+    border-radius: var(--border-radius-s);
+    margin: 2ch;
+    min-width: 4rem;
+    border: 4px solid rgb(61, 61, 61);
+}

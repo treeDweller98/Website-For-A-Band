@@ -18,7 +18,7 @@
 	--merch-card-bg: rgba(15, 16, 10, 0.167);
     --shadows-inner-s: 1px 1px 3px inset var(--bg-darker), -1px -1px 3px inset var(--bg-darker);
 	--shadows-inner-l: 1px 1px 10px inset var(--bg-darker), -1px -1px 10px inset var(--bg-darker);
-	--font-color-default: #333;
+	--font-color-default: rgb(230, 255, 240);
 
     
 }
@@ -27,7 +27,8 @@
 
 
 body {
-    background-color: var(--bg)
+    background-color: var(--bg);
+    color: var(--font-color-default);
 }
 
 main{
