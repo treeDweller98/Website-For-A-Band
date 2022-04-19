@@ -9,15 +9,19 @@
     
     // insert logic here
 
-        
+    $sql = "SELECT * FROM MERCH_T";
+    $result = mysqli_query($link, $sql);    
     // Close connection
-    mysqli_stmt_close($stmt);
+    // mysqli_stmt_close($stmt);
     mysqli_close($link);
 
     
     // Render
     $variables = array(
         'title' => "Merch | Tickets",
+        "stylesheets" => array("css/shop.css"),
+        'result' => $result
     );
-    renderLayoutWithContentFile("profile.php", $variables);
+    
+    renderLayoutWithContentFile("display-merch.php", $variables);
 ?>
