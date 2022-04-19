@@ -1,5 +1,4 @@
 <?php
-    date_default_timezone_set('Asia/Dhaka');
     // Configs
     $config = array(
         "db" => array(
@@ -25,11 +24,12 @@
     defined("LIBRARY_PATH")
         or define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/library'));
 
-    defined("TEMPLATES_PATH")
+        defined("TEMPLATES_PATH")
         or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
-
-
+        
+        
     // Error reporting for debugging
+    date_default_timezone_set('Asia/Dhaka');
     ini_set("error_reporting", "true");
     error_reporting(E_ALL);
 ?>
