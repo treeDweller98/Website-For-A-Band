@@ -1,5 +1,33 @@
+:root{
+    --bg: rgb(219, 255, 248);
+    --bg-darker: #3a5a55b0;
+    --bg-lighter: rgb(135, 207, 177);
+    --border-radius-s:10px;
+    --border-radius-l:25px;
+    --nav-bg: rgba(172, 187, 255, 0.7);
+    --price:green;
+    --options:rgba(157, 245, 201, 0.484);
+    --submit-btn: rgba(103, 222, 206, 0.911);
+	--shadows: 20px 20px 30px #333;
+    --shadows-shorter: 7px 7px 10px;
+    --card-alpha : 0.75;
+	--merch-card-bg: rgba(15, 16, 10, 0.167);
+    --shadows-inner-s: 1px 1px 3px inset var(--bg-darker), -1px -1px 3px inset var(--bg-darker);
+	--shadows-inner-l: 1px 1px 10px inset var(--bg-darker), -1px -1px 10px inset var(--bg-darker);
+	--font-color-default: #333;
+
+    
+}
+
+
+
+
 body {
     background-color: #282b33;
+}
+
+main{
+    margin: 2ch;
 }
 footer {
     padding: 2% 0;
