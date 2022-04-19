@@ -32,7 +32,7 @@
                         <li><span class="dropdown-item-text text-muted">Account</span></li>
                         <li><hr class="dropdown-divider"></li>
                         <?php
-                            if ($_SESSION["loggedin"]) {
+                            if ( isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] ) {
                                 echo <<< HTML
                                 <li><a class="dropdown-item active" href="profile.php#my-profile">Profile</a></li>
                                 <li><a class="dropdown-item" href="profile.php#my-orders">My Orders</a></li>
