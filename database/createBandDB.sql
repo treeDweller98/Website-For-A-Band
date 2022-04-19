@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `Band_Database`.`USER_T` (
   `subscribedToNewsletter` TINYINT ZEROFILL NOT NULL,
   `joined` DATETIME NOT NULL,
   PRIMARY KEY (`idUser`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
 ENGINE = InnoDB;
 
 
@@ -95,9 +95,9 @@ CREATE TABLE IF NOT EXISTS `Band_Database`.`TICKET_T` (
   `buyDate` DATETIME NOT NULL,
   `idTicketTier` INT NOT NULL,
   PRIMARY KEY (`idTicket`),
-  INDEX `fk_TICKET_T_1_idx` (`idConcert` ASC) VISIBLE,
-  INDEX `fk_TICKET_T_2_idx` (`idUser` ASC) VISIBLE,
-  INDEX `fk_TICKET_T_3_idx` (`idTicketTier` ASC) VISIBLE,
+  INDEX `fk_TICKET_T_1_idx` (`idConcert` ASC) ,
+  INDEX `fk_TICKET_T_2_idx` (`idUser` ASC) ,
+  INDEX `fk_TICKET_T_3_idx` (`idTicketTier` ASC) ,
   CONSTRAINT `fk_TICKET_T_1`
     FOREIGN KEY (`idConcert`)
     REFERENCES `Band_Database`.`CONCERT_T` (`idConcert`)
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `Band_Database`.`ORDER_T` (
   `paymentMethod` ENUM('CASH', 'CARD', 'MOBILE') NOT NULL,
   `deliveryStatus` ENUM('PROCESSING', 'ON-TRANSIT', 'DELIVERED') NOT NULL,
   PRIMARY KEY (`idOrder`),
-  INDEX `fk_ORDER_T_1_idx` (`idUser` ASC) VISIBLE,
+  INDEX `fk_ORDER_T_1_idx` (`idUser` ASC) ,
   CONSTRAINT `fk_ORDER_T_1`
     FOREIGN KEY (`idUser`)
     REFERENCES `Band_Database`.`USER_T` (`idUser`)
@@ -143,8 +143,8 @@ CREATE TABLE IF NOT EXISTS `Band_Database`.`ORDER_ITEM_T` (
   `idMerch` INT NOT NULL,
   `idOrder` INT NOT NULL,
   `quantity` TINYINT(2) ZEROFILL NOT NULL,
-  INDEX `fk_PURCHASE_T_1_idx` (`idMerch` ASC) VISIBLE,
-  INDEX `fk_PURCHASE_T_2_idx` (`idOrder` ASC) VISIBLE,
+  INDEX `fk_PURCHASE_T_1_idx` (`idMerch` ASC) ,
+  INDEX `fk_PURCHASE_T_2_idx` (`idOrder` ASC) ,
   PRIMARY KEY (`idMerch`, `idOrder`),
   CONSTRAINT `fk_PURCHASE_T_1`
     FOREIGN KEY (`idMerch`)
@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `Band_Database`.`SLIDESHOW_CARD_T` (
   `idSlideshow` INT NOT NULL,
   `idCard` INT NOT NULL,
   PRIMARY KEY (`idSlideshow`, `idCard`),
-  INDEX `fk_SLIDESHOW_CARD_T_1_idx` (`idCard` ASC) VISIBLE,
+  INDEX `fk_SLIDESHOW_CARD_T_1_idx` (`idCard` ASC) ,
   CONSTRAINT `fk_SLIDESHOW_CARD_T_1`
     FOREIGN KEY (`idCard`)
     REFERENCES `Band_Database`.`CARD_T` (`idCard`)
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `Band_Database`.`MESSAGES_T` (
   `topic` ENUM('BOOKING', 'QUERY', 'BUSINESS', 'MERCH', 'TICKET', 'OTHER') NOT NULL,
   `receivedTime` DATETIME NOT NULL,
   PRIMARY KEY (`idMessages`),
-  INDEX `fk_MESSAGES_T_1_idx` (`idUser` ASC) VISIBLE,
+  INDEX `fk_MESSAGES_T_1_idx` (`idUser` ASC) ,
   CONSTRAINT `fk_MESSAGES_T_1`
     FOREIGN KEY (`idUser`)
     REFERENCES `Band_Database`.`USER_T` (`idUser`)
