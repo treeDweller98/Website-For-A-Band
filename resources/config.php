@@ -3,6 +3,8 @@
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->safeLoad();
 
+    date_default_timezone_set('Asia/Dhaka');
+
     /* databaseAccess.php
         <?php
             // Database credentials
