@@ -32,6 +32,7 @@ form .form-control, form .form-control:focus, form .form-select, form .form-sele
     outline: none;
     color: white;
     background-color: #7c7c7c2b;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 icon {
@@ -48,3 +49,33 @@ icon:hover {
     height: auto;
     width: 32px;
 }
+table.ticket { 
+    border-collapse: separate; 
+    border-spacing: 2px;
+    clear: both;
+    width: 100%;
+ }
+table.ticket th { 
+    border-width: 1px; 
+    padding: 0.5em; 
+    position: relative; 
+    text-align: left; 
+    border-radius: 0.25em;
+    border-style: solid;
+    background: #EEE; 
+    border-color: #BBB; 
+    font-weight: bold; 
+    text-align: center; 
+}
+
+table.ticket td { 
+    border-color: #DDD;
+    border-width: 1px; 
+    padding: 0.5em; 
+    position: relative; 
+    text-align: left; 
+    border-radius: 0.25em;
+    border-style: solid; 
+}
+
+
