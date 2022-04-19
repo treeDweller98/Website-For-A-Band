@@ -251,8 +251,8 @@ INSERT INTO `Band_Database`.`MERCH_T` (`idMerch`, `name`, `description`, `imageU
 INSERT INTO `Band_Database`.`MERCH_T` (`idMerch`, `name`, `description`, `imageUrl`, `category`, `price`, `stock`, `discount`, `isAvailable`, `isFeatured`) VALUES (DEFAULT, 'Hat 2', 'rock our hat!', 'images/merch/hat-2.webp', 'hat', 250, 50, 20, 0, DEFAULT);
 INSERT INTO `Band_Database`.`MERCH_T` (`idMerch`, `name`, `description`, `imageUrl`, `category`, `price`, `stock`, `discount`, `isAvailable`, `isFeatured`) VALUES (DEFAULT, 'Hat 3', 'rock our hat!', 'images/merch/hat-3.webp', 'hat', 250, 50, 20, 0, DEFAULT);
 INSERT INTO `Band_Database`.`MERCH_T` (`idMerch`, `name`, `description`, `imageUrl`, `category`, `price`, `stock`, `discount`, `isAvailable`, `isFeatured`) VALUES (DEFAULT, 'Hat 4', 'rock our hat!', 'images/merch/hat-4.webp', 'hat', 250, 50, 20, 0, DEFAULT);
-INSERT INTO `Band_Database`.`MERCH_T` (`idMerch`, `name`, `description`, `imageUrl`, `category`, `price`, `stock`, `discount`, `isAvailable`, `isFeatured`) VALUES (DEFAULT, 'Jacket 1', 'rock our jacket!', 'images/merch/jacket-1.png', 'jacket', 900, 23, 0, 1, DEFAULT);
-INSERT INTO `Band_Database`.`MERCH_T` (`idMerch`, `name`, `description`, `imageUrl`, `category`, `price`, `stock`, `discount`, `isAvailable`, `isFeatured`) VALUES (DEFAULT, 'Wristband 1', 'rock our wristband!', 'images/merch/wristband-1.png', 'wristband', 100, 100, 20, 1, DEFAULT);
+INSERT INTO `Band_Database`.`MERCH_T` (`idMerch`, `name`, `description`, `imageUrl`, `category`, `price`, `stock`, `discount`, `isAvailable`, `isFeatured`) VALUES (DEFAULT, 'Jacket 1', 'rock our jacket!', 'images/merch/jacket-1.jpg', 'jacket', 900, 23, 0, 1, DEFAULT);
+INSERT INTO `Band_Database`.`MERCH_T` (`idMerch`, `name`, `description`, `imageUrl`, `category`, `price`, `stock`, `discount`, `isAvailable`, `isFeatured`) VALUES (DEFAULT, 'Wristband 1', 'rock our wristband!', 'images/merch/wristband-1.jpg', 'wristband', 100, 100, 20, 1, DEFAULT);
 
 COMMIT;
 
