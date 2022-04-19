@@ -24,7 +24,7 @@
                         class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" title="account"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false"
                         >
-                        <img src="images/icons/account.png" class="d-inline-block align-text-center icon icon-med" alt="Account">
+                        <img src="images/icons/account.png" class="d-inline-block align-text-center icon icon-md" alt="Account">
                         <?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : ""; ?>
                     </a>
         
