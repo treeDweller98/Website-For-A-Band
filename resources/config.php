@@ -1,12 +1,6 @@
 <?php
     // Configs
     $config = array(
-        "db" => array(
-            "dbname" => "database1",
-            "username" => "dbUser",
-            "password" => "pa$$",
-            "host" => "localhost"
-        ),
         "urls" => array(
             "baseUrl" => "http://localhost/website/final/public/"
         ),
