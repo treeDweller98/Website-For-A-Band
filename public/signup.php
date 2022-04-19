@@ -67,6 +67,7 @@
     // Render
     $variables = array(
         'title' => "Sign Up",
+        'stylesheets' => array("css/forms.css"),
         'scripts' => array('js/form-validation.js'),
         'email_err' => $email_err,
         'password_err' => $password_err,

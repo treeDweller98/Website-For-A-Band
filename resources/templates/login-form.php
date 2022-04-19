@@ -4,7 +4,7 @@
     2. Change straignt-to-welcome and add OTP
 -->
 
-<form action="login.php" method="POST" class="needs-validation" novalidate>
+<form action="login.php" method="POST" class="needs-validation transbox" novalidate>
     <h1>Log-In</h1>
     
     <?php

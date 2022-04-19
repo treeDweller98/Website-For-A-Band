@@ -1,3 +1,6 @@
 section.sec {
-    min-height: 100vh;
+    min-height: 0;
+}
+.icon {
+    background-color: rgba(0, 0, 0, 0.76);
 }

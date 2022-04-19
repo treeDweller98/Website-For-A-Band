@@ -60,6 +60,7 @@
     // Render
     $variables = array(
         'title' => "Log-in | Sign-up",
+        'stylesheets' => array("css/forms.css"),
         'scripts' => array('js/form-validation.js'),
         'login_err' => $login_err
     );
