@@ -23,14 +23,19 @@
         <label class="form-check-label" for="rememberMeChk">Remember Me</label>
     </div>
 
-    <a href="----------">Forgot Password?</a>
+    <a href="#">Forgot Password?</a>
 
     <button type="submit" class="btn btn-primary">Log In</button>
 
     <div>
         <?php 
-            echo isset($login_err) ? $login_err : "";
-            echo isset($diemsg) ? $diemsg : "";
+            if (isset($login_err)) {
+                echo <<< HTML
+                <div class="alert alert-danger" role="alert">
+                    {$login_err}
+                </div>
+                HTML;
+            }
         ?>
     </div>
 

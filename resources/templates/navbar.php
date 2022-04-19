@@ -24,20 +24,20 @@
                         role="button" data-bs-toggle="dropdown" aria-expanded="false"
                         >
                         <img src="images/icons/account.png" class="d-inline-block align-text-center icon icon-med" alt="Account">
-                        <?php echo isset($username) ? $username : ""; ?>
+                        <?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : ""; ?>
                     </a>
         
                     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li><span class="dropdown-item-text text-muted">Account</span></li>
                         <li><hr class="dropdown-divider"></li>
                         <?php
-                            if ($loggedIn) {
+                            if ($_SESSION["loggedin"]) {
                                 echo <<< HTML
                                 <li><a class="dropdown-item active" href="profile.php#profile">Profile</a></li>
                                 <li><a class="dropdown-item" href="profile.php#orders">My Orders</a></li>
                                 <li><a class="dropdown-item" href="profile.php#tickets#">My Tickets</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a href="logout.php">Logout</a></li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 HTML;
                             } else {
                                 echo <<< HTML

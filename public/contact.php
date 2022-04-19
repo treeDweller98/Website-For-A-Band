@@ -39,7 +39,6 @@
     $variables = array(
         'title' => $title,
         'scripts' => array('js/form-validation.js'),
-        'diemsg' => $diemsg,
         'isSent' => $isSent
     );
     

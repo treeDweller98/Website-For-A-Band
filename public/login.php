@@ -41,11 +41,11 @@
                     header("location: index.php");
                 } else {
                     // Password is not valid
-                    $login_err = "Invalid username or password";
+                    $login_err = "Invalid username or _password";
                 }
             } 
         } else {
-            $login_err = "Invalid username or password.";
+            $login_err = "Invalid _username or password";
         }
 
         // Close connection
@@ -59,7 +59,6 @@
     $variables = array(
         'title' => "Log-in | Sign-up",
         'scripts' => array('js/form-validation.js'),
-        'diemsg' => $diemsg,
         'login_err' => $login_err
     );
     
