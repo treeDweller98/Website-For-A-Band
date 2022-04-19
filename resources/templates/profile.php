@@ -1,4 +1,16 @@
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="new.css" rel="stylesheet" >
+    <title>Document</title>
+</head>
+<body>
     <div class="container">
         <div class="row">
           <div class="col">
@@ -26,9 +38,9 @@
                         <div class="col-lg-6 p-4">
                           <form>
                             <b class="m-2">Username:</b>
-                            <input class="form-control  m-2" name="username" value="{username}" required>
+                            <input class="form-control  m-2" name="username" value= <?php echo $_SESSION["id"] ?> readonly>
                             <b class="m-2">First Name:</b>
-                            <input class="form-control m-2" name="username" value="{username}" required>
+                            <input class="form-control m-2" name="username" value=<?php echo $fname ?> readonly>
                             
                             
                           </form>
@@ -36,9 +48,9 @@
                         <div class="col-lg-6 p-4">
                           <form>
                             <b class="m-2">Email Address:</b>
-                            <input class="form-control m-2" name="username" value="{username}" required>
+                            <input class="form-control m-2" name="username" value=<?php echo $email ?> readonly>
                             <b class="m-2">Last Name:</b>
-                            <input class="form-control m-2" name="username" value="{username}" required>
+                            <input class="form-control m-2" name="username" value=<?php echo $lname ?> readonly>
                           </form>
                         </div>
                         <hr class="mt-3">  
@@ -48,13 +60,23 @@
                         <div class="col-lg-12 px-4 pt-4">
                             <form>
                                 <b class="m-4">Address:</b>
-                                <input class="form-control mx-3 mt-2" name="username" value="{username}" required>
-                                <span class="d-flex m-5">
-                                    <b class="m-4">Address:</b>
-                                    <input class="form-control " name="username" value="{username}" required>
-                                    <b class="m-4">Address:</b>
-                                    <input class="form-control " name="username" value="{username}" required>
-                                </span>
+                                <input class="form-control mx-3 mt-2" name="username" value=<?php echo $address ?> readonly>
+                                <div class="row mt-4">
+                                  <div class="col-4">
+                                    <b class="m-4">Phone:</b>
+                                    <input class="form-control  mx-3 mt-2" name="username" value=<?php echo $phone ?> readonly>
+                                  </div>
+                                  <div class="col-4">
+                                    <b class="m-4">Zip-Code:</b>
+                                    <input class="form-control  mx-3 mt-2" name="username" value=<?php echo $zipCode ?> readonly>
+                                  
+                                  </div>
+                                  <div class="col-4">
+                                    <b class="m-4">Country:</b>
+                                    <input class="form-control mx-3 mt-2" name="username" value=<?php echo $country ?> readonly>
+                                      
+                                  </div>
+                                </div> 
                             </form>
                         </div>
                       </div>
@@ -76,30 +98,34 @@
                           </tr>
                       </thead>
                       <tbody  >
-                        <tr style="text-align:center">
-                          
-                          <td>
-                             here
-                          </td>
-                          <td>Here</td>
-                          <td>Here</td>
-                          <td>Here</td>
-                          <td>Here</td>
-                          <td>Here</td>
+                        <?php 
+                          while($rows2 = $ticketResult->fetch_assoc()){
+                        ?>
+                        <td><?php echo $rows2['idTicket']; ?></td> 
+                        <td><?php echo $rows2['tierName']; ?> </td>
+                        <td><?php echo $rows2['name']; ?></td>
+                        <td><?php echo $rows2['schedule'];?> </td>
+                        <td><?php echo $rows2['price']; ?></td>
+                        <td><?php echo $rows2['buyDate']; ?> </td>
                         </tr>
+                        <?php } ?>
                       </tbody>
                   </table>
                 </div>
               </div>
               <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <div class="accordion" id="accordionPanelsStayOpenExample">
+                  <?php 
+                    while($rows = merchResult->fetch_assoc()){
+
+                  ?>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                         <div>
-                          <h4> Invoice # 101138</h4>
+                          <h4> Invoice: <?php echo $rows['idOrder']; ?> </h4>
                           <p>
-                          Date: January 1, 2012
+                          Date: <?php echo $rows['ordTime']; ?>
                           </p>
                         </div>  
                       </button>
@@ -111,18 +137,19 @@
                           <thead>
                             <tr>
                               <th><span >Item</span></th>
-                              <th><span>Something</span></th>
-                              <th><span >Status</span></th>
+                              <th><span>Merch Name</span></th>
                               <th><span>Quantity</span></th>
                               <th><span >Price</span></th>
+                              <th><span >Status</span></th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td><span>Experience Review</span></td>
-                              <td><span >$</span><span>150.00</span></td>
-                              <td><span >4</span></td>
-                              <td><span data-prefix>$</span><span>600.00</span></td>
+                              <td><span><?php echo $rows['imageUrl']; ?> </span></td>
+                              <td><span><?php echo $rows['name']; ?> </span></td>
+                              <td><span ><?php echo $rows['quantity']; ?></span></td>
+                              <td><span>$</span><span> <?php echo $rows['price']; ?></span></td>
+                              <td><span > <?php echo $status ?></span></td>
                             </tr>
                           </tbody>
                         </table>
@@ -130,7 +157,7 @@
                           <div class="text-center">
                             <tr>
                               <th><span >Total</span></th>
-                              <td><span>$</span><span>600.00</span></td>
+                              <td><span>$</span><span><?php echo $rows['quantity']; ?></span></td>
                             </tr>
                             <tr>
                               <th><span >Amount Paid</span></th>
@@ -141,9 +168,15 @@
                       </div>
                     </div>
                   </div> 
+                  <?php
+                    }
+                  ?>
               </div>
             </div>
         </div>
     </div>
     
-</main>
+
+    
+</body>
+</html>
