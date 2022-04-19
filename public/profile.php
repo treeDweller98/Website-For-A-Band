@@ -1,38 +1,26 @@
 <?php
+    session_start();
     require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
     require_once(LIBRARY_PATH . "/templateFunctions.php");
     
-    // insert logic here
-    
-    // Render
-    $variables = array(
-        'title' => "Account | {$_SESSION["username"]}",
-    );
-    
-    renderLayoutWithContentFile("profile.php", $variables);
+    if ($_SESSION['loggedin']) {
+        // Connect to DB
+        require_once(realpath(dirname(__FILE__) . "/../resources/databaseAccess.php"));
+        
+        // Insert logic here
+        
+        // Close connection
+        mysqli_stmt_close($stmt);
+        mysqli_close($link);
+        
+        // Render
+        $variables = array(
+            'title' => "Account | {$_SESSION["username"]}",
+        );
+        renderLayoutWithContentFile("profile.php", $variables);
+
+    } else {
+        // Redirect to login if not signed in
+        header("location: login.php?message=signin");
+    }
 ?>
-
-<!-- NAVBAR -->
-<?php require 'resources/.php'?>
-
-<main>
-    <!-- main slideshow with new music, featured merch etc.-->
-    <section>
-        SLIDESHOW
-    </section>
-
-    <!-- Band photos and about us stuff -->
-    <section>
-        BAND PHOTOS
-    </section>
-
-    <!-- Tour date cards -->
-    <section>
-        TOUR DATE
-        TOUR DATE
-        TOUR DATE
-    </section>
-</main>
-
-<!-- FOOTER -->
-<?php require 'resources/templates/footer.php' ?>

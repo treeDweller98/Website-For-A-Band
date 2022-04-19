@@ -13,14 +13,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a> </li>
-                <li class="nav-item"><a class="nav-link" href="shop.php">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.php#merch">Merch</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.php#tickets">Tickets</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">    
                     <a
-                        class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                        class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" title="account"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false"
                         >
                         <img src="images/icons/account.png" class="d-inline-block align-text-center icon icon-med" alt="Account">
@@ -33,9 +34,9 @@
                         <?php
                             if ($_SESSION["loggedin"]) {
                                 echo <<< HTML
-                                <li><a class="dropdown-item active" href="profile.php#profile">Profile</a></li>
-                                <li><a class="dropdown-item" href="profile.php#orders">My Orders</a></li>
-                                <li><a class="dropdown-item" href="profile.php#tickets#">My Tickets</a></li>
+                                <li><a class="dropdown-item active" href="profile.php#my-profile">Profile</a></li>
+                                <li><a class="dropdown-item" href="profile.php#my-orders">My Orders</a></li>
+                                <li><a class="dropdown-item" href="profile.php#my-tickets#">My Tickets</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 HTML;

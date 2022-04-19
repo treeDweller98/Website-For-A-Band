@@ -1,10 +1,30 @@
 <!-- 
     TODO
     1. Add the error messages generated in login.php 
+    2. Change straignt-to-welcome and add OTP
 -->
 
 <form action="login.php" method="POST" class="needs-validation" novalidate>
     <h1>Log-In</h1>
+    
+    <?php
+        if( !empty($_GET['message']) ) {
+
+            if ( $_GET['message'] == "signedup" ) {
+                echo <<< HTML
+                <div class="alert alert-primary" role="alert">
+                    Welcome! Please log in with your new account to continue
+                </div>
+                HTML;
+            } else if ( $_GET['message'] == "signin" ) {
+                echo <<< HTML
+                <div class="alert alert-warning" role="alert">
+                    You must be signed in to view this page
+                </div>
+                HTML;
+            }
+        }
+    ?>
 
     <div">
         <label for="loginEmailBox" class="form-label">Email</label>
@@ -27,17 +47,15 @@
 
     <button type="submit" class="btn btn-primary">Log In</button>
 
-    <div>
-        <?php 
-            if (isset($login_err)) {
-                echo <<< HTML
-                <div class="alert alert-danger" role="alert">
-                    {$login_err}
-                </div>
-                HTML;
-            }
-        ?>
-    </div>
+    <?php 
+        if (isset($login_err)) {
+            echo <<< HTML
+            <div class="alert alert-danger" role="alert">
+                {$login_err}
+            </div>
+            HTML;
+        }
+    ?>
 
     <div>
         <p> Don't have an account? </p><a href="signup.php">Sign up now</a>

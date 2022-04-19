@@ -5,6 +5,7 @@
  -->
 
 <?php
+    session_start();
     require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
     require_once(LIBRARY_PATH . "/templateFunctions.php");
     
@@ -39,6 +40,7 @@
                     
                     // Redirect user to welcome page
                     header("location: index.php");
+                    exit;
                 } else {
                     // Password is not valid
                     $login_err = "Invalid username or _password";
@@ -61,6 +63,5 @@
         'scripts' => array('js/form-validation.js'),
         'login_err' => $login_err
     );
-    
     renderLayoutWithContentFile("login-form.php", $variables);
 ?>

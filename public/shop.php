@@ -1,40 +1,23 @@
 <?php
-    require 'vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->safeLoad();
+    session_start();
+    require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
+    require_once(LIBRARY_PATH . "/templateFunctions.php");
 
     
+    // Connect to DB
+    require_once(realpath(dirname(__FILE__) . "/../resources/databaseAccess.php"));
+    
+    // insert logic here
 
-    include('resources/templates/header.php');
-    // PAGE TITLE
-    $title = "Shop";
+        
+    // Close connection
+    mysqli_stmt_close($stmt);
+    mysqli_close($link);
 
-    $output = str_replace('%TITLE%', $title, $output);
-    echo $output;
+    
+    // Render
+    $variables = array(
+        'title' => "Merch | Tickets",
+    );
+    renderLayoutWithContentFile("profile.php", $variables);
 ?>
-
-
-<!-- NAVBAR -->
-<?php require 'resources/.php'?>
-
-<main>
-    <!-- main slideshow with new music, featured merch etc.-->
-    <section>
-        SLIDESHOW
-    </section>
-
-    <!-- Band photos and about us stuff -->
-    <section>
-        BAND PHOTOS
-    </section>
-
-    <!-- Tour date cards -->
-    <section>
-        TOUR DATE
-        TOUR DATE
-        TOUR DATE
-    </section>
-</main>
-
-<!-- FOOTER -->
-<?php require 'resources/templates/footer.php' ?>

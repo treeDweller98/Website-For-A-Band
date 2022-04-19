@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
     require_once(LIBRARY_PATH . "/templateFunctions.php");
     
@@ -54,19 +55,23 @@
         // Close connection
         mysqli_stmt_close($stmt);
         mysqli_close($link);
+
+        // Logout current user (if accessing this page while logged for some unholy reason)
+        require_once("logout.php");
+        // Redirect user to login page
+        header("location: login.php?message=signedup");
+        exit;
     }
     
 
     // Render
     $variables = array(
-        'title' => "Log-in | Sign-up",
+        'title' => "Sign Up",
         'scripts' => array('js/form-validation.js'),
         'email_err' => $email_err,
         'password_err' => $password_err,
         'confirm_password_err' => $confirm_password_err,
-        'diemsg' => $diemsg
     );
-    
     renderLayoutWithContentFile("signup-form.php", $variables);
 ?>
 
