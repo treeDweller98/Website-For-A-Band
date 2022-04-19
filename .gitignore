@@ -1,5 +1,4 @@
 .env
 /vendor
-/resources/databaseAccess.php
 composer.json
 composer.lock

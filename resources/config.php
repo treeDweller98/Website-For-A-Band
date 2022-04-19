@@ -1,25 +1,5 @@
 <?php
-    require '../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->safeLoad();
-
-    /* databaseAccess.php
-        <?php
-            // Database credentials
-            define('DB_SERVER', 'serverhere');
-            define('DB_USERNAME', 'userhere');
-            define('DB_PASSWORD', 'pwhere');
-            define('DB_NAME', 'namehere');
-
-            $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-            if($link === false){
-                $diemsg = "ERROR: Could not connect. " . mysqli_connect_error();
-                die( $diemsg );
-            }
-        ?> 
-        Make this, env does not work
-    */
-
+    date_default_timezone_set('Asia/Dhaka');
     // Configs
     $config = array(
         "db" => array(
