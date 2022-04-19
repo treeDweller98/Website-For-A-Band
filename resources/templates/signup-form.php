@@ -4,7 +4,7 @@
     3. Add the error messages generated in signup.php
 -->
 <main>
-    <form action="signup.php" method="POST" class="needs-validation" novalidate>
+    <form action="signup.php" method="POST" class="needs-validation transbox" novalidate>
         <h1>Sign Up</h1>
 
         <!-- NAME -->

@@ -3,15 +3,24 @@
     require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
     require_once(LIBRARY_PATH . "/templateFunctions.php");
     
-    if ($_SESSION['loggedin']) {
+    if ( isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         // Connect to DB
         require_once(realpath(dirname(__FILE__) . "/../resources/databaseAccess.php"));
         
         $sql = "SELECT * FROM USER_T WHERE idUser = {$_SESSION['id']}";
 
-    
-        while($rows=$result->fetch_assoc()){ 
-                
+        $sqlticket = "SELECT T.idTicket, C.name, TI.price,TI.tierName, C.schedule, T.buyDate 
+                     FROM USER_T as U, TICKET_T as T, CONCERT_T as C, TICKET_TIER_T as TI
+                     WHERE U.idUser = T.idUser AND T.idConcert = C.idConcert AND T.idTicketTier = TI.idTicketTier;";
+
+        $sqlmerch = "SELECT O.idOrder, M.imageUrl, M.price,OI.quantity,O.paidStatus 
+                    FROM USER_T AS U, ORDER_T AS O, ORDER_ITEM_T as OI, MERCH_T AS M 
+                    WHERE U.idUser = O.idUser AND O.idOrder = OI.idOrder AND OI.idMerch = M.idMerch;";
+
+        
+        $result1 = $link->query($sql);
+        while($rows=$result1->fetch_assoc()){ 
+                        
             $fname =  $rows['fname'];
             $lname=  $rows['lname'];
             $email =  $rows['email'];
@@ -21,7 +30,10 @@
             $phone =  $rows['phone'];
             $joined =  $rows['joined'];
         }
-               
+
+        $ticketResult = $link->query($sqlticket);
+        $merchResult = $link->query($sqlmerch);
+    
         // Close connection
         mysqli_close($link);
         
@@ -36,7 +48,9 @@
             'country'  => $country,
             'phone'  => $phone,
             'joined'  => $joined,
-
+            'ticketResult'  => $ticketResult,
+            'merchResult'=>$merchResult,
+           
         );
         renderLayoutWithContentFile("profile.php", $variables);
 
