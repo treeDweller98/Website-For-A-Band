@@ -24,6 +24,6 @@ function matchPassword() {
     var pw2 = document.getElementById("confirmPassword");
     
     if(pw1 == pw2) {
-        return true;
+        return true;        // also works when pw1 and pw2 doesn't exist
     } return false;
 }

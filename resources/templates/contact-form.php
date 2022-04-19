@@ -24,8 +24,9 @@
         <!-- TOPIC SELECTORS -->
         <div class="col mb-3 d-flex justify-content-evenly">
             <!-- GENERATE THESE WITH PHP LOOP -->
+            <!-- ENUM('BOOKING', 'QUERY', 'BUSINESS', 'MERCH', 'TICKET', 'OTHER') -->
             <div class="form-check-inline px-2">
-                <input class="form-check-input" type="radio" name="type" id="inlineRadio3" value="other" required>
+                <input class="form-check-input" type="radio" name="topic" id="inlineRadio3" value="other" required>
                 <label class="form-check-label" for="inlineRadio3">other</label>
             </div>
         </div>
@@ -46,7 +47,28 @@
         </div>
         
         <div>
-            <button type="submit" value="Submit" class="btn btn-primary rounded-pill py-2 px-5">Send</button>
+            <button type="submit" value="Submit" class="btn btn-primary rounded-pill py-2 px-5" id="sendBtn">Send</button>
+        </div>
+
+        <div>
+            <?php 
+                if ( isset($isSent) ) {
+                    if ($isSent) {
+                        echo <<< HTML
+                        <div class="alert alert-primary" role="alert">
+                            Message Sent!
+                        </div>
+                        <script>document.getElementById('sendBtn').disabled = true;</script>
+                        HTML;
+                    } else {
+                        echo <<< HTML
+                        <div class="alert alert-danger" role="alert">
+                            Unable to send message. Please try again later.
+                        </div>
+                        HTML;
+                    }
+                }
+            ?>
         </div>
     </form>
 </main>
