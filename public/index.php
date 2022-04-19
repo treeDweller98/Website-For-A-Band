@@ -13,6 +13,8 @@
     // Package variables for use
     $variables = array(
         'title' => "GENERICA | MUSIC",
+        'stylesheets' => array("css/scrollspy-sidebar.css"),
+        'scripts' => array("js/scrollspy-sidebar.js")
     );
     
     // Render page
