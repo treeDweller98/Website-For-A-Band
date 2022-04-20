@@ -1,0 +1,33 @@
+table.ticket { 
+    border-collapse: separate; 
+    border-spacing: 2px;
+    clear: both;
+    width: 100%;
+
+ }
+table.ticket th { 
+    border-width: 1px; 
+    padding: 0.5em; 
+    position: relative; 
+    text-align: left; 
+    border-radius: 0.25em;
+    border-style: solid;
+    background: #EEE; 
+    border-color: #BBB; 
+    font-weight: bold; 
+    text-align: center; 
+    color:black
+}
+
+table.ticket td { 
+    border-color: #DDD;
+    border-width: 1px; 
+    padding: 0.5em; 
+    position: relative; 
+    text-align: center; 
+    border-radius: 0.25em;
+    border-style: solid; 
+    color:black;
+    width: 50%;
+    height:50%
+}
