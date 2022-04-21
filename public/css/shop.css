@@ -2,8 +2,8 @@ body{
     color: white;
 }
 
-aside{
-    margin: 0 1ch 0 5ch;
+.merch-filter{
+    margin: 0 1ch 0 0;
     float: left;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ aside{
     top: 50%;
     gap: 1ch;
 }
-aside > *{
+.merch-filter > *{
     padding: 0.5rem;
     background-color: var(--options);
     border-radius: var(--border-radius-s);

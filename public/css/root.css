@@ -5,7 +5,9 @@
 
     --footer-text: rgb(212, 204, 204);
     --footer-bg: #212529;
-
+    
+	--merch-card-bg: rgba(15, 16, 10, 0.167);
+    
     --border-radius-s:10px;
     --border-radius-l:25px;
     --nav-bg: rgba(172, 187, 255, 0.7);
@@ -15,7 +17,6 @@
 	--shadows: 20px 20px 30px #333;
     --shadows-shorter: 7px 7px 10px;
     --card-alpha : 0.75;
-	--merch-card-bg: rgba(15, 16, 10, 0.167);
     --shadows-inner-s: 1px 1px 3px inset var(--bg-darker), -1px -1px 3px inset var(--bg-darker);
 	--shadows-inner-l: 1px 1px 10px inset var(--bg-darker), -1px -1px 10px inset var(--bg-darker);
 	--font-color-default: rgb(230, 255, 240);
