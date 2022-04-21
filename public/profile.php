@@ -7,15 +7,15 @@
         // Connect to DB
         require_once(realpath(dirname(__FILE__) . "/../resources/databaseAccess.php"));
         
-        $sql = "SELECT * FROM USER_T WHERE idUser = {$_SESSION['id']}";
+        $sql = "SELECT * FROM USER_T WHERE idUser =  {$_SESSION['id']}";
 
         $sqlticket = "SELECT T.idTicket, C.name, TI.price,TI.tierName, C.schedule, T.buyDate 
                      FROM USER_T as U, TICKET_T as T, CONCERT_T as C, TICKET_TIER_T as TI
-                     WHERE U.idUser = T.idUser AND T.idConcert = C.idConcert AND T.idTicketTier = TI.idTicketTier;";
+                     WHERE U.idUser =  {$_SESSION['id']} AND U.idUser = T.idUser AND T.idConcert = C.idConcert AND T.idTicketTier = TI.idTicketTier;";
 
-        $sqlmerch = "SELECT O.idOrder, M.imageUrl, M.price,OI.quantity,O.paidStatus 
+        $sqlmerch = "SELECT *
                     FROM USER_T AS U, ORDER_T AS O, ORDER_ITEM_T as OI, MERCH_T AS M 
-                    WHERE U.idUser = O.idUser AND O.idOrder = OI.idOrder AND OI.idMerch = M.idMerch;";
+                    WHERE U.idUser =  {$_SESSION['id']} AND U.idUser = O.idUser AND O.idOrder = OI.idOrder AND OI.idMerch = M.idMerch;";
 
         
         $result1 = $link->query($sql);
@@ -40,6 +40,7 @@
         // Render
         $variables = array(
             'title' => "Account | {$_SESSION["username"]}",
+            "stylesheets" => array("css/profile.css"),
             'fname'  => $fname,
             'lname'  => $lname,
             'email'  => $email,
@@ -50,6 +51,7 @@
             'joined'  => $joined,
             'ticketResult'  => $ticketResult,
             'merchResult'=>$merchResult,
+            
            
         );
         renderLayoutWithContentFile("profile.php", $variables);

@@ -1,5 +1,5 @@
 
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
           <div class="col">
             <div class="text-center">
@@ -17,7 +17,7 @@
             </div>
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="card m-5  " style=" box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);">
+                <div class="card m-5 bg-black " style=" box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);">
                
                   <h5 class="card-header p-3"  style="background-color:#a2b9bc">My Account</h5>
                  
@@ -134,7 +134,10 @@
                         <div>
                           <h4> Invoice: <?php echo $rows['idOrder']; ?> </h4>
                           <p>
-                          Date: <?php echo $rows['orderTime']; ?>
+                              <?php 
+                                $date = date_create($rows['orderTime']);  
+                                echo date_format($date, 'l jS F Y');    
+                            ?>
                           </p>
                         </div>  
                       </button>
@@ -154,11 +157,11 @@
                           </thead>
                           <tbody >
                             <tr > 
-                              <td><span><img src=<?php echo $rows['imageUrl'] ; ?> style="width:10%; height:10%"></span></td>
-                              <td><span><?php echo $rows['name']; ?> </span></td>
-                              <td><span ><?php echo $rows['quantity']; ?></span></td>
-                              <td><span>BDT</span><span> <?php echo $rows['price']; ?></span></td>
-                              <td><span > <?php echo $rows['paidStatus']; ?></span></td>
+                              <td style="width: 20%;"><span><img src=<?php echo $rows['imageUrl'] ; ?> style="width:30%; height:30%"></span></td>
+                              <td style="width: 20%;"><span><?php echo $rows['name']; ?> </span></td>
+                              <td style="width: 20%;"><span ><?php echo $rows['quantity']; ?></span></td>
+                              <td style="width: 20%;"><span>BDT</span><span> <?php echo $rows['price']; ?></span></td>
+                              <td style="width: 20%;"><span > <?php echo $rows['paidStatus']; ?></span></td>
                             </tr>
                           </tbody>
                         </table>
@@ -167,7 +170,7 @@
                           <div class="text-center">
                             <tr>
                               <th><span >Total</span></th>
-                              <td><span>$</span><span><?php echo $rows['quantity']*$rows['price']; ?></span></td>
+                              <td><span>BDT</span><span><?php echo $rows['quantity']*$rows['price']; ?></span></td>
                             </tr>
                           
                               <tr>
@@ -188,9 +191,8 @@
                       if($counter == 0){
                         echo <<<HTML
                               <div class="alert alert-warning" role="alert">
-                                <h5>You did not buy any merches yets! Hurry Up and Grab Now.</h5>
-                                <h6>To purchase click on the link below:</h6>
-                                <button type="button" class="btn btn-primary">Click here.</button>
+                                <h5>You did not buy any merches yet! Hurry Up and Grab Now.</h5>
+                                <
                               </div>
                         HTML;
                       }
