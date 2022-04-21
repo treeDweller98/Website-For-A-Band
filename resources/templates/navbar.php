@@ -1,7 +1,10 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark">
     <div class="container-fluid">
         
-        <a class="navbar-brand" href="index.php">Generic Band Website</a>
+        <a class="navbar-brand" href="index.php">
+            <img src="images/icons/band.png" class="d-inline-block align-text-center" alt="band icon" width="40px">
+            Generic Band Website
+        </a>
 
         <button 
             class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
