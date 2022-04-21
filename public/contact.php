@@ -38,6 +38,7 @@
     // Package variables for use
     $variables = array(
         'title' => $title,
+        'stylesheets' => array("css/forms.css"),
         'scripts' => array('js/form-validation.js'),
         'isSent' => $isSent
     );

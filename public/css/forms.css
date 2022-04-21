@@ -1,17 +1,33 @@
+section {
+    min-height: 75vh;
+}
 .transbox {
-    background: #000000d0;
-    color: white;
-    padding: 2em;
+    background-color: #211e25f5;
+    border: 1px ridge rgba(240, 248, 255, 0.349);
     border-radius: 30px;
-    width: 100%;
-    max-width: 720px;
-    margin: 1em;
 }
 
 form .form-control, form .form-control:focus, form .form-select, form .form-select:focus {
     border: none;
+    border-radius: 10px;
     outline: none;
     color: white;
-    background-color: #7c7c7c2b;
+    background-color: #7c7c7c15;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contactForm {
+    background-image: url("../images/layout/concert1.jpg"); /* The image used */
+    height: 100vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#loginForm {
+    background-image: url("../images/layout/concert2.jpg"); /* The image used */
+    height: 100vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
