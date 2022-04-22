@@ -38,13 +38,13 @@
     <div class="tab-pane active" id="merch" role="tabpanel" aria-labelledby="merch-tab">
         <?php renderLayoutWithContentFile("admin-view-merch.php", $variables); ?>
     </div>
-    <div class="tab-pane active" id="concert" role="tabpanel" aria-labelledby="concert-tab">
+    <div class="tab-pane" id="concert" role="tabpanel" aria-labelledby="concert-tab">
         <?php renderLayoutWithContentFile("admin-view-concert.php", $variables); ?>
     </div>
-    <div class="tab-pane active" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
         <?php renderLayoutWithContentFile("admin-view-messages.php", $variables); ?>
     </div>
-    <div class="tab-pane active" id="user" role="tabpanel" aria-labelledby="user-tab">
+    <div class="tab-pane" id="user" role="tabpanel" aria-labelledby="user-tab">
         <?php renderLayoutWithContentFile("admin-view-user.php", $variables); ?>
     </div>
 </div>
