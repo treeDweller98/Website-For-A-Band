@@ -36,6 +36,27 @@
                         SQL;
     $concertTableHeaderList = mysqli_query($link, $concertTableHeaderListSQL);
 
+    // MESSAGE-----------------------------------------------------------------------------
+    $allMessagesSQL = "SELECT * FROM MESSAGES_T";
+    $allMessages = mysqli_query($link, $allMessagesSQL);
+    $messagesTableHeaderListSQL = <<< SQL
+                            SELECT COLUMN_NAME 
+                            FROM INFORMATION_SCHEMA.COLUMNS 
+                            WHERE TABLE_SCHEMA = "{$_ENV["DB_NAME"]}" AND TABLE_NAME = 'MESSAGES_T';
+                        SQL;
+    $messagesTableHeaderList = mysqli_query($link, $messagesTableHeaderListSQL);
+
+    // USER-----------------------------------------------------------------------------
+    $allUsersSQL = "SELECT * FROM USER_T";
+    $allUsers = mysqli_query($link, $allUsersSQL);
+    $userTableHeaderListSQL = <<< SQL
+                            SELECT COLUMN_NAME 
+                            FROM INFORMATION_SCHEMA.COLUMNS 
+                            WHERE TABLE_SCHEMA = "{$_ENV["DB_NAME"]}" AND TABLE_NAME = 'USER_T';
+                        SQL;
+    $userTableHeaderList = mysqli_query($link, $userTableHeaderListSQL);
+
+
     // Close connection
     mysqli_close($link);
     
@@ -48,6 +69,10 @@
         'merchTableHeaderList' => $merchTableHeaderList,
         'allConcert' => $allConcert,
         'concertTableHeaderList' => $concertTableHeaderList,
+        'allMessages' => $allMessages,
+        'messagesTableHeaderList' => $messagesTableHeaderList,
+        'allUsers' => $allUsers,
+        'userTableHeaderList' => $userTableHeaderList,
     );
     
     renderLayoutWithContentFile("admin-view.php", $variables);

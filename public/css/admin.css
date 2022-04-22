@@ -6,7 +6,7 @@ table >*{
     color: var(--font-color-default);
 }
 
-.merch-table > tbody img{
+table > tbody img{
     max-width: 8rem;
     border-radius: var(--border-radius-s);
     margin: 2ch;
