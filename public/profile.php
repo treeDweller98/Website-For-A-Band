@@ -2,8 +2,8 @@
     session_start();
     require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
     require_once(LIBRARY_PATH . "/templateFunctions.php");
-    // TODO: NEED TO UNCOMMENT LATER
-    // if ( isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+
+    if ( isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         // Connect to DB
         require_once(realpath(dirname(__FILE__) . "/../resources/databaseAccess.php"));
 
@@ -20,7 +20,6 @@
         
         $result1 = $link->query($sql);
         while($rows=$result1->fetch_assoc()){ 
-                        
             $fname =  $rows['fname'];
             $lname=  $rows['lname'];
             $email =  $rows['email'];
@@ -56,8 +55,8 @@
         );
         renderLayoutWithContentFile("profile.php", $variables);
 
-    // } else {
-    //     // Redirect to login if not signed in
-    //     header("location: login.php?message=signin");
-    // }
+    } else {
+        // Redirect to login if not signed in
+        header("location: login.php?message=signin");
+    }
 ?>

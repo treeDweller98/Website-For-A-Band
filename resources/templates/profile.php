@@ -1,4 +1,4 @@
-
+<main>
     <div class="container mt-4">
         <div class="row">
           <div class="col">
@@ -192,7 +192,6 @@
                         echo <<<HTML
                               <div class="alert alert-warning" role="alert">
                                 <h5>You did not buy any merches yet! Hurry Up and Grab Now.</h5>
-                                <
                               </div>
                         HTML;
                       }
@@ -203,3 +202,4 @@
             </div>
         </div>
     </div>
+</main>
