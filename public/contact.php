@@ -14,11 +14,11 @@
         // Insert message
         $sql = "INSERT INTO MESSAGES_T 
         (idUser, fname, lname, email, subject, message, topic, receivedTime) 
-        VALUES (?,?,?,?,?,?,?,?)";
+        VALUES (?,?,?,?,?,?,?, NOW())";
 
         $stmt = mysqli_prepare( $link, $sql );
-        mysqli_stmt_bind_param( $stmt, "isssssis",
-            $idUser, $fname, $lname, $email, $subject, $message, $sendTime, $topic
+        mysqli_stmt_bind_param( $stmt, "issssss",
+            $idUser, $fname, $lname, $email, $subject, $message, $topic
         );
         $idUser = ($_SESSION["loggedin"] = true) ? $_SESSION["id"] : null;
         $fname = trim( $_POST['fname'] );
@@ -27,7 +27,6 @@
         $subject = trim( $_POST['subject'] );
         $message = trim( $_POST['message'] );
         $topic = $_POST['topic'];
-        $sendTime = time();
 
         $isSent = mysqli_stmt_execute($stmt);
         

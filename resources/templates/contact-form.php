@@ -13,13 +13,13 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="mb-3">
                         <label class="form-label" for="fname">First name:</label>
-                        <input type="text" class="form-control" id="fname" name="firstName" required>
+                        <input type="text" class="form-control" id="fname" name="fname" required>
                         <div class="valid-feedback">Hello!</div>
                         <div class="invalid-feedback">We need a name to call you by</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="lname">Last name:</label>
-                        <input class="form-control" type="text" id="lname" name="lastName">
+                        <input class="form-control" type="text" id="lname" name="lname">
                     </div>
                     <div>
                         <label class="form-label" for="email">Email</label>
@@ -33,7 +33,7 @@
                     <!-- MESSAGE -->
                     <label class="form-label">Your Message</label>
                     
-                    <input class="form-control" id="subject" placeholder="Subject" name="subjectLine" required>
+                    <input class="form-control" id="subject" placeholder="Subject" name="subject" required>
                     <div class="invalid-feedback">
                         Please provide a subject line
                     </div>
@@ -57,13 +57,14 @@
                         $categories = array('BOOKING', 'QUERY', 'BUSINESS', 'MERCH', 'TICKET', 'OTHER');
 
                         foreach( $categories as $category ) {
-                            $i = 0;
+                            $i = 1;
                             echo <<< HTML
                             <div class="form-check-inline px-2 col-3">
-                                <input class="form-check-input" type="radio" name="topic" id="inlineRadio{$i}" value="{$category}" required>
                                 <label class="form-check-label" for="inlineRadio{$i}">{$category}</label>
+                                <input class="form-check-input" type="radio" name="topic" id="inlineRadio{$i}" value={$category} required>
                             </div>
                             HTML;
+                            $i++;
                         }
                     ?>
                 </div>

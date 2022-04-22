@@ -30,12 +30,12 @@
                 country, subscribedToNewsletter, password, joined ) 
                 VALUES 
                 ( ?, ?, ?, ?, ?, ?, 
-                ?, ?, ?, ? )";
+                ?, ?, ?, NOW() )";
 
             $stmt = mysqli_prepare( $link, $sql );
             mysqli_stmt_bind_param( $stmt, "sssssssisi",
                 $fname, $lname, $email, $phone, $address, 
-                $zipCode, $country, $subscribe, $pwHash, $joined 
+                $zipCode, $country, $subscribe, $pwHash
             );
 
             $fname = trim( $_POST['fname'] );
@@ -47,7 +47,6 @@
             $country= trim( $_POST['country'] );
             $subscribe = $_POST['subscribe'];
             $pwHash = password_hash( trim($_POST["password"]), PASSWORD_DEFAULT );
-            $joined = date_create( time() );
 
             mysqli_stmt_execute($stmt);
         }
