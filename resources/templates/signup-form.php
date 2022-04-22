@@ -13,13 +13,13 @@
                 <!-- NAME -->
                 <div class="col-lg-6 col-sm-12 mb-3">
                     <label class="form-label" for="fname">First name:</label>
-                    <input type="text" class="form-control" id="fname" name="firstName" required>
+                    <input type="text" class="form-control" id="fname" name="fname" required>
                     <div class="valid-feedback">Hello!</div>
                     <div class="invalid-feedback">I need a name to call you by</div>
                 </div>
                 <div class="col-lg-6 col-sm-12 mb-3">
                     <label class="form-label" for="lname">Last name:</label>
-                    <input class="form-control" type="text" id="lname" name="lastName">
+                    <input class="form-control" type="text" id="lname" name="lname">
                 </div>
                 
                 <!-- EMAIL -->
@@ -79,7 +79,7 @@
                         <div id="pwHelp" class="form-text">
                             Should be at least 8-characters long with numbers, uppercase and lowercase letters
                         </div>
-                        
+
                         <div class="invalid-feedback">
                                 Please enter a valid password
                         </div>        
