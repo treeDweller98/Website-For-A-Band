@@ -12,7 +12,8 @@
     $featuredMerch = mysqli_fetch_all( $result, MYSQLI_ASSOC );
 
     // Fetch upcoming concerts for cards
-    $sql = "SELECT * FROM CONCERT_T WHERE schedule > {time()}";
+    $time = time();
+    $sql = "SELECT * FROM CONCERT_T WHERE schedule > {$time}";
     $result = mysqli_query($link, $sql) or die( mysqli_error($link) );
     $upcomingConcerts = mysqli_fetch_all( $result, MYSQLI_ASSOC );
 
@@ -21,7 +22,7 @@
     
     // Package variables for use
     $variables = array(
-        'title' => "GENERICA | MUSIC",
+        'title' => "GENERICBAND | MUSIC",
         'stylesheets' => array("css/scrollspy-sidebar.css", "css/home.css"),
         'scripts' => array("js/scrollspy-scrollbar.js"),
         'featuredMerch' => $featuredMerch,
@@ -29,5 +30,5 @@
     );
     
     // Render page
-    renderLayoutWithContentFile("home.php", $variables);
+    renderLayoutWithContentFile("homepage.php", $variables);
 ?>

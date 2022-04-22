@@ -17,17 +17,25 @@ form .form-control, form .form-control:focus, form .form-select, form .form-sele
 }
 
 #contactForm {
-    background-image: url("../images/layout/concert1.jpg"); /* The image used */
-    height: 100vh; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: url("../images/layout/concert1.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #loginForm {
-    background-image: url("../images/layout/concert2.jpg"); /* The image used */
-    height: 100vh; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: url("../images/layout/concert2.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#signupForm {
+    font-size: small;
+    background-image: url("../images/layout/concert3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
