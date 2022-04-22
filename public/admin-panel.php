@@ -28,7 +28,6 @@
     $tableHeaderList = mysqli_query($link, $tableHeaderListSQL);
     // Close connection
     mysqli_close($link);
-
     
     // Render
     $variables = array(
@@ -39,6 +38,6 @@
         'tableHeaderList' => $tableHeaderList,
     );
     
-    renderLayoutWithContentFile("admin-merch-view.php", $variables);
+    renderLayoutWithContentFile("admin-view.php", $variables);
 ?>
 
