@@ -49,11 +49,9 @@
             'phone'  => $phone,
             'joined'  => $joined,
             'ticketResult'  => $ticketResult,
-            'merchResult'=>$merchResult,
-            
-           
+            'merchResult'=>$merchResult
         );
-        renderLayoutWithContentFile("profile.php", $variables);
+        renderLayoutWithContentFile("profile-view.php", $variables);
 
     } else {
         // Redirect to login if not signed in

@@ -1,6 +1,5 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light adminNav">
     <div class="container-fluid">
-      <a class="navbar-brand justify-content-center" href="#">Menu</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,6 +15,11 @@
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="concert-tab" data-bs-toggle="tab" data-bs-target="#concert" type="button" role="tab" aria-controls="concert" aria-selected="false">
               Concerts
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">
+              Messages
             </button>
           </li>
           <li class="nav-item" role="presentation">
@@ -37,7 +41,9 @@
     <div class="tab-pane active" id="concert" role="tabpanel" aria-labelledby="concert-tab">
         <?php renderLayoutWithContentFile("admin-view-concert.php", $variables); ?>
     </div>
-
+    <div class="tab-pane active" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+        <?php renderLayoutWithContentFile("admin-view-messages.php", $variables); ?>
+    </div>
     <div class="tab-pane active" id="user" role="tabpanel" aria-labelledby="user-tab">
         <?php renderLayoutWithContentFile("admin-view-user.php", $variables); ?>
     </div>

@@ -1,4 +1,5 @@
-<table class="table merch-table">
+<h1>Concert Data</h1>
+<table class="table concert-table">
     <thead>
         <tr>
             <?php
