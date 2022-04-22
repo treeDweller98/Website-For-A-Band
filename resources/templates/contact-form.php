@@ -60,11 +60,10 @@
                             $i = 1;
                             echo <<< HTML
                             <div class="form-check-inline px-2 col-3">
-                                <label class="form-check-label" for="inlineRadio{$i}">{$category}</label>
-                                <input class="form-check-input" type="radio" name="topic" id="inlineRadio{$i}" value={$category} required>
+                                <input class="form-check-input" type="radio" name="topic" id="inlineRadio{$category}" value={$category} required>
+                                <label class="form-check-label" for="inlineRadio{$category}">{$category}</label>
                             </div>
                             HTML;
-                            $i++;
                         }
                     ?>
                 </div>

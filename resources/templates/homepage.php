@@ -9,7 +9,7 @@
 <main>
     <section class="sec d-flex flex-lg-row flex-md-column justify-content-center" id="mainBanner">
 
-        <div class="d-flex flex-column justify-content-center text-center bg-dark bg-opacity-75">
+        <div class="d-flex flex-column justify-content-center text-center bg-dark bg-opacity-75 px-5">
             <h2>OUT NOW!</h2>
             <h1 class="text-muted py-4">&middot G E N E R I C A : GenericAlbum &middot</h1>
             <h3> ON ALL STREAMING PLATFORMS </h3>
@@ -95,8 +95,8 @@
             foreach ( $upcomingConcerts as $concert ) {
                 echo <<< HTML
                 <div class="card bg-dark" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-4 p-3">
                             <img src="{$concert['imageUrl']}" class="img-fluid rounded-start" alt="{$concert['name']}">
                         </div>
                         <div class="col-md-8">
