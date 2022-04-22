@@ -9,9 +9,9 @@
     
     // insert logic here
 
-    $sql = "SELECT * FROM MERCH_T";
-    $allMerch = mysqli_query($link, $sql);    
-    
+    // MERCH-----------------------------------------------------------------------------
+    $allMerchSQL = "SELECT * FROM MERCH_T";
+    $allMerch = mysqli_query($link, $allMerchSQL);    
     $categoryListSQL = <<< SQL
                         SELECT category 
                         FROM `MERCH_T` 
@@ -19,13 +19,23 @@
                     SQL;
 
     $categoryList = mysqli_query($link, $categoryListSQL);
-
-    $tableHeaderListSQL = <<< SQL
+    $merchTableHeaderListSQL = <<< SQL
                             SELECT COLUMN_NAME 
                             FROM INFORMATION_SCHEMA.COLUMNS 
                             WHERE TABLE_SCHEMA = "{$_ENV["DB_NAME"]}" AND TABLE_NAME = 'MERCH_T';
                         SQL;
-    $tableHeaderList = mysqli_query($link, $tableHeaderListSQL);
+    $merchTableHeaderList = mysqli_query($link, $merchTableHeaderListSQL);
+
+    // CONCERT-----------------------------------------------------------------------------
+    $allConcertSQL = "SELECT * FROM CONCERT_T";
+    $allConcert = mysqli_query($link, $allConcertSQL);
+    $concertTableHeaderListSQL = <<< SQL
+                            SELECT COLUMN_NAME 
+                            FROM INFORMATION_SCHEMA.COLUMNS 
+                            WHERE TABLE_SCHEMA = "{$_ENV["DB_NAME"]}" AND TABLE_NAME = 'CONCERT_T';
+                        SQL;
+    $concertTableHeaderList = mysqli_query($link, $concertTableHeaderListSQL);
+
     // Close connection
     mysqli_close($link);
     
@@ -35,7 +45,9 @@
         "stylesheets" => array("css/admin.css"),
         'allMerch' => $allMerch,
         'categoryList' => $categoryList,
-        'tableHeaderList' => $tableHeaderList,
+        'merchTableHeaderList' => $merchTableHeaderList,
+        'allConcert' => $allConcert,
+        'concertTableHeaderList' => $concertTableHeaderList,
     );
     
     renderLayoutWithContentFile("admin-view.php", $variables);

@@ -3,8 +3,8 @@
     <thead>
         <tr>
             <?php
-            if (mysqli_num_rows($tableHeaderList) > 0) {
-                while($row = mysqli_fetch_assoc($tableHeaderList)) {
+            if (mysqli_num_rows($merchTableHeaderList) > 0) {
+                while($row = mysqli_fetch_assoc($merchTableHeaderList)) {
                     echo <<< HTML
                         <th>{$row["COLUMN_NAME"]}</td>
                     HTML;
