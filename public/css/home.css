@@ -1,3 +1,16 @@
+main{
+    margin: 2ch;
+}
+/* .scrollspy-bar{
+
+} */
+
+#mainBanner{
+    margin-right: 5ch;
+    height: 85vh;
+    max-height: 800px;
+}
+
 /* primary sections */
 .sec h1,h2,h3,h4,h5 {
     letter-spacing: 2px;
@@ -8,4 +21,19 @@
 }
 .sec a {
     color: rgb(143, 143, 143);
+}
+
+.merch-tour-section{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 5ch;
+    gap: 2ch;
+    justify-content: space-evenly;
+}
+.carousel-container{
+    width: 50ch;
+}
+
+#tourDates{
+    min-width: 50ch;
 }
