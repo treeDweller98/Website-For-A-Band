@@ -33,7 +33,7 @@
                 ?, ?, ?, NOW() )";
 
             $stmt = mysqli_prepare( $link, $sql );
-            mysqli_stmt_bind_param( $stmt, "sssssssisi",
+            mysqli_stmt_bind_param( $stmt, "sssssssis",
                 $fname, $lname, $email, $phone, $address, 
                 $zipCode, $country, $subscribe, $pwHash
             );
