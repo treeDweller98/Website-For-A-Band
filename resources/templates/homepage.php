@@ -7,15 +7,15 @@
         </ul>
     </div>
 
-    <section class="sec d-flex flex-lg-row flex-md-column justify-content-center" id="mainBanner">
+    <section class="sec d-flex flex-sm-column flex-md-column flex-lg-row justify-content-center" id="mainBanner">
 
-        <div class="d-flex flex-column justify-content-center text-center bg-dark bg-opacity-75 px-5">
+        <div class="d-flex flex-column justify-content-center text-center bg-dark bg-opacity-75 py-2 px-5">
             <h2>OUT NOW!</h2>
-            <h1 class="text-muted py-4">&middot G E N E R I C A : GenericAlbum &middot</h1>
+            <h1 class="text-muted py-2">&middot G E N E R I C A : GenericAlbum &middot</h1>
             <h3> ON ALL STREAMING PLATFORMS </h3>
         </div>
 
-        <img src="images/layout/album-3.webp" alt="GENERIC ALBUM ART">
+        <img src="images/layout/album-3.webp" alt="GENERIC ALBUM ART" class="img-fluid">
 
         <div class="d-flex flex-lg-column flex-md-row justify-content-center bg-dark bg-opacity-75">
             <a href="#"><img title="Amazon Music" class="icon icon-md m-3" src="images/icons/amazon.png" alt="amazon music"></a>
@@ -32,59 +32,59 @@
 
     <section class="merch-tour-section">
         <div class="sec d-flex flex-column align-items-center py-5" id="merchSlideshow">
-                <h2 class="mb-3">New Merch!</h2>
-                <div class="row col-lg-10 justify-content-center carousel-container">
-                    <div id="merchCarouselIndicator" class="carousel slide carousel-bg-dark" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <?php
-                                $i = 0;
-                                foreach( $featuredMerch as $slide ) {
-                                    $active = ($i == 0) ? "active" : "";
-                                    $slideNum = $i+1;
-                                    echo <<< HTML
-                                    <button type="button" class="{$active}" data-bs-target="#merchCarouselIndicator" data-bs-slide-to="{$i}" aria-label="Slide {$slideNum}"></button>
-                                    HTML;
-                                    $i++;
-                                }
-                            ?>
-                        </div>
-        
-                        <div class="carousel-inner">
-                            <?php
-                                $i = 0;
-                                foreach( $featuredMerch as $slide ) {
-                                    $active = ($i == 0) ? "active" : "";
-                                    echo <<< HTML
-                                    <div class="carousel-item {$active}" data-bs-interval="2000">
-                                        <img src="{$slide['imageUrl']}" class="d-block card-img" alt="{$slide['name']}">
-        
-                                        <div class="card-img-overlay d-flex justify-content-center align-items-end mb-5">
-                                            <div class="bg-dark bg-opacity-75 p-4 px-5">
-                                                <h5 class="card-title">{$slide['name']}</h5>
-                                                <h6 class="card-subtitle mb-2 text-info">Taka {$slide['price']}/-</h6>
-                                                <p class="card-text">{$slide['description']}</p>
-                                            </div>
-                                            <!-- <a href="{$slide['btnUrl']}" class="btn {$slide['btnStyle']}"></a> -->
-                                        </div>
-                                    </div>
-                                    HTML;
-                                    $i++;
-                                }
-                            ?>
-                        </div>
-        
-                        <button class="carousel-control-prev" type="button" data-bs-target="#merchCarouselIndicator" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#merchCarouselIndicator" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+            <h2 class="mb-3">New Merch!</h2>
+            <div class="row col-lg-10 justify-content-center carousel-container">
+                <div id="merchCarouselIndicator" class="carousel slide carousel-bg-dark" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <?php
+                            $i = 0;
+                            foreach( $featuredMerch as $slide ) {
+                                $active = ($i == 0) ? "active" : "";
+                                $slideNum = $i+1;
+                                echo <<< HTML
+                                <button type="button" class="{$active}" data-bs-target="#merchCarouselIndicator" data-bs-slide-to="{$i}" aria-label="Slide {$slideNum}"></button>
+                                HTML;
+                                $i++;
+                            }
+                        ?>
                     </div>
+    
+                    <div class="carousel-inner">
+                        <?php
+                            $i = 0;
+                            foreach( $featuredMerch as $slide ) {
+                                $active = ($i == 0) ? "active" : "";
+                                echo <<< HTML
+                                <div class="carousel-item {$active}" data-bs-interval="2000">
+                                    <img src="{$slide['imageUrl']}" class="d-block card-img" alt="{$slide['name']}">
+    
+                                    <div class="card-img-overlay d-flex justify-content-center align-items-end mb-5">
+                                        <div class="bg-dark bg-opacity-75 p-4 px-5">
+                                            <h5 class="card-title">{$slide['name']}</h5>
+                                            <h6 class="card-subtitle mb-2 text-info">Taka {$slide['price']}/-</h6>
+                                            <p class="card-text">{$slide['description']}</p>
+                                        </div>
+                                        <!-- <a href="{$slide['btnUrl']}" class="btn {$slide['btnStyle']}"></a> -->
+                                    </div>
+                                </div>
+                                HTML;
+                                $i++;
+                            }
+                        ?>
+                    </div>
+    
+                    <button class="carousel-control-prev" type="button" data-bs-target="#merchCarouselIndicator" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#merchCarouselIndicator" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+            </div>
         </div>
-        <div class="sec d-flex flex-column align-items-center py-5" id="tourDates">
+        <section class="sec d-flex flex-column align-items-center py-5" id="tourDates">
             <h2 class="mb-3">Upcoming Shows</h2>
             <?php
                 foreach ( $upcomingConcerts as $concert ) {
@@ -110,6 +110,6 @@
                     HTML;
                 }
             ?>
-        </div>
+        </section>
     </section>
 </main>

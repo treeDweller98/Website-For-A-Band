@@ -1,5 +1,5 @@
 main{
-    margin: 2ch;
+    margin: 5ch 2ch;
 }
 /* .scrollspy-bar{
 
@@ -7,8 +7,6 @@ main{
 
 #mainBanner{
     margin-right: 5ch;
-    height: 85vh;
-    max-height: 800px;
 }
 
 /* primary sections */
@@ -24,6 +22,7 @@ main{
 }
 
 .merch-tour-section{
+    margin-top: 5ch;
     display: flex;
     flex-wrap: wrap;
     margin-right: 5ch;
