@@ -1,30 +1,31 @@
-<aside>
-    <div class="filter-option">
-        <input class="form-check-input" id="albumCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".album" aria-expanded="false" checked>
-        <label class="form-check-label" for="albumCheck">Albums</label>
-    </div>
-    <div class="filter-option">
-        <input class="form-check-input" id="tshirtCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".tshirt" aria-expanded="false" checked>
-        <label class="form-check-label" for="tshirtCheck">T Shirts</label>
-    </div>
-    <div class="filter-option">
-        <input class="form-check-input" id="sweatshirtCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".sweatshirt" aria-expanded="false" checked>
-        <label class="form-check-label" for="sweatshirtCheck">Sweatshirts</label>
-    </div>
-    <div class="filter-option">
-        <input class="form-check-input" id="jacketCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".jacket" aria-expanded="false" checked>
-        <label class="form-check-label" for="jacketCheck">Jackets</label>
-    </div>
-    <div class="filter-option">
-        <input class="form-check-input" id="hatCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".hat" aria-expanded="false" checked>
-        <label class="form-check-label" for="hatCheck">Hats</label>
-    </div>
-    <div class="filter-option">
-        <input class="form-check-input" id="wristbandCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wristband" aria-expanded="false" checked>
-        <label class="form-check-label" for="wristbandCheck">Wristbands</label>
-    </div>
-</aside>
 <main>
+    <div class="merch-filter">
+        <div class="filter-option">
+            <input class="form-check-input" id="albumCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".album" aria-expanded="false" checked>
+            <label class="form-check-label" for="albumCheck">Albums</label>
+        </div>
+        <div class="filter-option">
+            <input class="form-check-input" id="tshirtCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".tshirt" aria-expanded="false" checked>
+            <label class="form-check-label" for="tshirtCheck">T Shirts</label>
+        </div>
+        <div class="filter-option">
+            <input class="form-check-input" id="sweatshirtCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".sweatshirt" aria-expanded="false" checked>
+            <label class="form-check-label" for="sweatshirtCheck">Sweatshirts</label>
+        </div>
+        <div class="filter-option">
+            <input class="form-check-input" id="jacketCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".jacket" aria-expanded="false" checked>
+            <label class="form-check-label" for="jacketCheck">Jackets</label>
+        </div>
+        <div class="filter-option">
+            <input class="form-check-input" id="hatCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".hat" aria-expanded="false" checked>
+            <label class="form-check-label" for="hatCheck">Hats</label>
+        </div>
+        <div class="filter-option">
+            <input class="form-check-input" id="wristbandCheck" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wristband" aria-expanded="false" checked>
+            <label class="form-check-label" for="wristbandCheck">Wristbands</label>
+        </div>
+    </div>
+
     <section class="merch-list">
     <?php
         if (mysqli_num_rows($result) > 0) {
