@@ -55,14 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 
                 
     $stmt->execute();
-    //fetching result would go here, but will be covered later
+
     $stmt->close();
     header('Location: admin-panel.php');
-
-    // $insertDataReturn = mysqli_query($link, $insertDataSQL);
-    // if ($insertDataReturn) {
-    //     header('Location: admin-panel.php');
-    // }
 }
 
 
