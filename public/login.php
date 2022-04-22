@@ -14,10 +14,10 @@
         // Connect to DB
         require_once(realpath(dirname(__FILE__) . "/../resources/databaseAccess.php"));
 
-        $sql = "SELECT email, password FROM USER_T WHERE email = ?";
+        $sql = "SELECT idUser, password, fname, lname FROM USER_T WHERE email = ?";
 
         $stmt = mysqli_prepare($link, $sql);
-        mysqli_stmt_bind_param( $stmt, "ss", $email );
+        mysqli_stmt_bind_param( $stmt, "s", $email );
         $email = trim( $_POST['loginEmail'] );
         $password = trim( $_POST['loginPassword'] );
 
@@ -26,7 +26,7 @@
 
         if ( mysqli_stmt_num_rows($stmt) == 1 ) {
 
-            mysqli_stmt_bind_result($stmt, $id, $userEmail, $hashed_password, $fname, $lname);
+            mysqli_stmt_bind_result($stmt, $id, $hashed_password, $fname, $lname);
 
             if(mysqli_stmt_fetch($stmt)) {
                 if ( password_verify($password, $hashed_password) ) {

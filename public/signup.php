@@ -47,7 +47,7 @@
             $country= trim( $_POST['country'] );
             $subscribe = $_POST['subscribe'];
             $pwHash = password_hash( trim($_POST["password"]), PASSWORD_DEFAULT );
-            $joined = time();
+            $joined = date_create( time() );
 
             mysqli_stmt_execute($stmt);
         }

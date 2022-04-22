@@ -56,7 +56,7 @@
             <?php 
                 if (isset($login_err)) {
                     echo <<< HTML
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger bg-dark" role="alert">
                         {$login_err}
                     </div>
                     HTML;
