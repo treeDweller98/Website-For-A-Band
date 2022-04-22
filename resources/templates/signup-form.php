@@ -23,7 +23,7 @@
                 </div>
                 
                 <!-- EMAIL -->
-                <div class="col-12 mb-3">
+                <div class="col-lg-6 col-sm-12 mb-3">
                     <label for="emailbox" class="form-label">Email</label>
                     <input type="email" class="form-control" id="emailbox" aria-describedby="emailHelp" placeholder="example@email.com" name="email" required>
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
@@ -39,7 +39,7 @@
                 </div>
                 
                 <!-- PHONE -->
-                <div class="col-12 mb-3">
+                <div class="col-lg-6 col-sm-12 mb-3">
                     <label for="phoneBox" class="form-label">Phone</label>
                     <input type="tel" id="phoneBox" class="form-control" size="20" minlength="9" maxlength="14" name="phone">
                     <div class="invalid-feedback">Please enter a valid phone number</div>
@@ -68,24 +68,26 @@
                 </div>
                 
                 <!-- PASSWORD -->
-                <div class="my-3 p-3 border-top border-bottom border-1" >
-                    <div class="mb-3">
+                <div class="row my-3 p-3 border-top border-bottom border-1" >
+                    <div class="col-lg-6 col-sm-12 mb-3">
                         <label for="pwbox" class="form-label">Password</label>
                         <input 
                             type="password" class="form-control" aria-describedby="pwHelp" id="pwbox" name="password" 
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required
                         >
+
+                        <div id="pwHelp" class="form-text">
+                            Should be at least 8-characters long with numbers, uppercase and lowercase letters
+                        </div>
+                        
                         <div class="invalid-feedback">
                                 Please enter a valid password
                         </div>        
                     </div>
                     
-                    <div class="mb-3">
+                    <div class="col-lg-6 col-sm-12 mb-3">
                         <label for="pwbox2" class="form-label">Retype Password</label>
                         <input type="password" class="form-control" id="pwbox2" name="confirmPassword" required>
-                        <div id="pwHelp" class="form-text">
-                            Should be at least 8-characters long with numbers, uppercase and lowercase letters
-                        </div>
                     </div>
                 </div>
             </div>
