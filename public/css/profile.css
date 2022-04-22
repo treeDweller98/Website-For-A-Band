@@ -34,3 +34,12 @@ table.ticket td {
     border-color: rgb(0, 0, 0);
     border-width:2px;
 }
+
+.form-control:disabled, .form-control[readonly] {
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #7c7c7c15;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+}

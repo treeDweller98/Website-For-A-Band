@@ -19,9 +19,9 @@
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="card m-5 bg-black " style=" box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);">
                
-                  <h5 class="card-header p-3"  style="background-color:#a2b9bc">My Account</h5>
+                  <h5 class="card-header p-3 bg-secondary">My Account</h5>
                  
-                  <div class="card-body bg-black">
+                  <div class="card-body bg-dark p-5">
                     <h5 class="card-title"></h5>
                     <p class="card-text">
                       <div class="row ">

@@ -18,7 +18,7 @@ form .form-control, form .form-control:focus, form .form-select, form .form-sele
 
 #contactForm {
     background-image: url("../images/layout/concert1.jpg");
-    height: 100vh;
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
